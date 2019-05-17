@@ -23,7 +23,7 @@ if int(sys.argv[1])==0:
 
 #memo
 # 0105との違いは進化の入るタイミング
-
+y=woman_ls
 def cluster_aic(x,y):
     try:
         cluster=x_means_aic.x_means_cluster(np.c_[x,y])
@@ -58,7 +58,7 @@ def cluster_aic(x,y):
     except:
         cur_cycle=1
     return cur_cycle
-
+centers
 
 class Village:
     def __init__(self):
@@ -182,6 +182,7 @@ def main():
                 vill.clans=vill.clans[k:]
                 vills.append(Village())
                 vills[-1].clans=copy.deepcopy(clans)
+        print(len(vills))
         while len(vills)>num_vills:
             vills.remove(random.choice(vills))
         for vill in vills:
@@ -206,6 +207,7 @@ def main():
     if len(vills)==0:
         cycles=0
     return [cycles,incests]
+vill=vills[0]
 incests
 def run():
     df_cluster_aic=pd.DataFrame(index=cluster_ls)
@@ -229,7 +231,7 @@ for i in range(50):
 #settings
 mutation=0.01
 initial_pop=10
-num_vills=30
+num_vills=50
 coop=0.1
 conflict=0.1
 marry=3
@@ -238,7 +240,7 @@ friendship=30
 for coop in [0.1,0.2,0.3,0.5,1,2,3,5,10,20][2*(int(sys.argv[1])//5):2*(int(sys.argv[1])//5+1)]:
     for conflict in [0.1,0.2,0.3,0.5,1,2,3,5,10,20][2*(int(sys.argv[1])%5):2*(int(sys.argv[1])%5+1)]:
         for mutation in [0.01,0.02,0.03,0.05,0.1,0.2,0.3]:
-            birth=2+coop*conflict/2
+            birth=2
             if os.path.exists("./cluster_aic/{}vills_{}lineages_initial{}_coop{}pc_conflict{}pc_marry{}_mutation{}pc_friendship{}.csv".format(num_vills,num_lineage,initial_pop,round(coop*100),round(conflict*100),marry,round(mutation*100),friendship)):
                 pass
             else:
