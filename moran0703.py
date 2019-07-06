@@ -302,11 +302,9 @@ def main():
             #     vills[i].lineages.append(Lineage(-0.5,0.5,1.5,0.5,initial_pop))
             if initial == 0:
                 vills[i].lineages.append(Lineage(np.array([0.0,0.0]),np.array([0.0,0.0]),1,initial_pop))
-            elif initial ==1:
-                # vills[i].lineages.append(Lineage(np.random.normal(0,friendship/2,2),np.random.normal(0,friendship/2,2),1,initial_pop))
-                vills[i].lineages.append(Lineage(np.random.rand(2),np.random.rand(2),1,initial_pop))
             else:
-                vills[i].lineages.append(Lineage(5*np.random.rand(2),5*np.random.rand(2),1,initial_pop))
+                # vills[i].lineages.append(Lineage(np.random.normal(0,friendship/2,2),np.random.normal(0,friendship/2,2),1,initial_pop))
+                vills[i].lineages.append(Lineage(3*np.random.rand(2),3*np.random.rand(2),1,initial_pop))
 
 
     while num <500:
@@ -368,7 +366,7 @@ def main():
         cycles=0
     return [cycles,man_cycles,woman_cycles,restricts,structures]
 structures
-cur_structures
+num
 def run():
     df=pd.DataFrame(index=list(range(50)))
     k=0
@@ -385,7 +383,7 @@ def run():
     df.to_pickle("./res/{}regions_{}lineages_coop{}pc_conflict{}pc_mutation{}pm_descentmut{}pm_marry{}_friendship{}_initial{}_birth{}.pkl".format(num_trial,num_lineage,round(coop*100),round(conflict*100),round(mutation*1000),round(descent_mut*1000),marry,friendship,initial,birth))
 
 #settings
-initial=2
+
 num_lineage=60
 initial_pop=10
 num_trial=100
@@ -399,10 +397,11 @@ initial=1
 birth=4
 
 for descent_mut in [0.0001,0.001,0.01]:
-    for mutation in [0.0001,0.001,0.01,0.1][2*(int(sys.argv[2])):2*(int(sys.argv[2])+1)]:
-        for coop in [[0.05,0.1,0.3,0.5,1][int(sys.argv[1])//5]]:
-            for conflict in [[0.5,1,2,3,5][int(sys.argv[1])%5]]:
-                run()
+    for num_lineage in [60,40]:
+        for mutation in [0.03,0.05]:
+            for coop in [[0.05,0.1,0.3,0.5,1][int(sys.argv[1])//5]]:
+                for conflict in [[0.5,1,2,3,5][int(sys.argv[1])%5]]:
+                    run()
 # birth=6
 # num_vills=3
 # for coop in [0.05,0.1,0.2,0.3,0.5,1,2,3,5,10][2*(int(sys.argv[1])//10):2*(int(sys.argv[1])//10+1)]:
