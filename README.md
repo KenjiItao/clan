@@ -7,7 +7,7 @@ We build a simple model of family groups, in which exchange of brides and result
 Run [one-trait/emergy.py](one-trait/emerge.py) to get the phase diagrams on the emergence of the incest taboo.  
 Run [one-trait/plot.py](one-trait/plot.py) to get the visual images on the emergence of the incest taboo.
 
-## One-trait model
+## Two-trait model
 By introducing two dimensional trait and preference, we show the emergence of kinship structures.
 
 Run [two-trait/emergy.py](two-trait/emerge.py) to get the phase diagrams on the emergence of kinship structures.  
