@@ -1,5 +1,5 @@
 # Evolution of Kinship Structures
-Source Code of K. Itao and K. Kaneko "Evolution of Kinship Structures Driven by Marriage Tie and Competition" (to be published)
+Source Code of K. Itao and K. Kaneko "Evolution of Kinship Structures Driven by Marriage Tie and Competition" PNAS, 2020
 
 ## One-trait model
 We build a simple model of family groups, in which exchange of brides and resultant cooperation and competition are considered, by applying an agent-based model and multi-level evolution. By introducing one dimensional trait and preference, we show the emergence of the incest taboo.
