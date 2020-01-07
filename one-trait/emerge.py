@@ -16,7 +16,6 @@ import x_means
 import warnings
 warnings.filterwarnings('ignore')
 
-# os.chdir('/Users/kenjiitao 1/Documents/python/clan/clan_emerge')
 
 if int(sys.argv[1])==0:
     if not os.path.exists("./cluster"):
@@ -24,8 +23,6 @@ if int(sys.argv[1])==0:
     if not os.path.exists("./incest"):
         os.mkdir("./incest")
 
-#memo
-# 0105との違いは進化の入るタイミング
 def cluster(x,y):
     try:
         cluster=x_means.x_means_cluster(np.c_[x,y])
