@@ -17,50 +17,12 @@ from matplotlib import pyplot as plt
 import warnings
 warnings.filterwarnings('ignore')
 
-# os.chdir('/Users/kenjiitao 1/Documents/python/clan/clan_emerge')
 
 if int(sys.argv[1])==0:
     if not os.path.exists("./figs_timeseries"):
         os.mkdir("./figs_timeseries")
     if not os.path.exists("./figs_map"):
         os.mkdir("./figs_map")
-
-#memo
-# 0105との違いは進化の入るタイミング
-# def cluster_aic(x,y):
-#     try:
-#         cluster=x_means_aic.x_means_cluster(np.c_[x,y])
-#         centers=cluster.cluster_centers_
-#         num_clans=len(centers)
-#         clans=[]
-#         for i in range(num_clans):
-#             mate=0
-#             cur=100
-#             for j in range(num_clans):
-#                 if abs(centers[i][1]-centers[j][0])<cur:
-#                     mate=j
-#                     cur=abs(centers[i][1]-centers[j][0])
-#             clans.append([i,mate])
-#         candidate=list(range(num_clans))
-#         cur_cycle=0
-#         while len(candidate)>0:
-#             cycle=[candidate[0]]
-#             cur=candidate[0]
-#             while True:
-#                 next=clans[cur][1]
-#                 if clans[cur][1] in cycle:
-#                     if cur_cycle<len(cycle)-cycle.index(next):
-#                         cur_cycle=len(cycle)-cycle.index(next)
-#                     for clan in cycle:
-#                         if clan in candidate:
-#                             candidate.remove(clan)
-#                     break
-#                 else:
-#                     cycle.append(next)
-#                     cur=next
-#     except:
-#         cur_cycle=1
-#     return cur_cycle
 
 class Village:
     def __init__(self):
