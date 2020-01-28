@@ -16,11 +16,7 @@ if int(sys.argv[1])==0:
     if not os.path.exists("./res"):
         os.mkdir("./res")
 
-#memo
-# まずは村単位での粗視化をしないモデル
-# L2ノルムで距離を測っている．これは高次元への閣僚を見据えて．
-# descentはtraitの出自．０が父系，１が母系
-# 今までのモデルに近くて女をよその村からもらったらその村のみんなと仲良くする．
+
 def cluster(data):
     res=0
     structure=0

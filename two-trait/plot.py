@@ -13,24 +13,12 @@ from pyclustering.cluster import xmeans
 from matplotlib import pyplot as plt
 import seaborn as sns
 sns.set_style(style="whitegrid")
-
-# sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-# import x_means
-# os.chdir('/Users/kenjiitao 1/Documents/python/clan/clan_emerge/vill')
-# import x_means_aic
-
 import warnings
 warnings.filterwarnings('ignore')
 
 if int(sys.argv[1])==0:
     if not os.path.exists("./figs"):
         os.mkdir("./figs")
-
-#memo
-# まずは村単位での粗視化をしないモデル
-# L2ノルムで距離を測っている．これは高次元への閣僚を見据えて．
-# descentはtraitの出自．０が父系，１が母系
-# 今までのモデルに近くて女をよその村からもらったらその村のみんなと仲良くする．
 
 cluster_ls=[]
 for i in range(50):

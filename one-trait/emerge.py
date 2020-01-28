@@ -8,7 +8,7 @@ import collections
 import copy
 import math
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-import x_means
+from pyclustering.cluster import xmeans
 # import seaborn as sns
 # sns.set_style(style="whitegrid")
 # from matplotlib import pyplot as plt
@@ -16,20 +16,22 @@ import x_means
 import warnings
 warnings.filterwarnings('ignore')
 
-# os.chdir('/Users/kenjiitao 1/Documents/python/clan/clan_emerge')
-
 if int(sys.argv[1])==0:
     if not os.path.exists("./cluster"):
         os.mkdir("./cluster")
     if not os.path.exists("./incest"):
         os.mkdir("./incest")
 
-#memo
-# 0105との違いは進化の入るタイミング
 def cluster(x,y):
     try:
-        cluster=x_means.x_means_cluster(np.c_[x,y])
-        centers=cluster.cluster_centers_
+        init_center = xmeans.kmeans_plusplus_initializer(np.c_[x,y], 2).initialize()
+        xm = xmeans.xmeans(np.c_[x,y], init_center, ccore=False)
+        xm.process()
+        sizes = [len(cluster) for cluster in xm.get_clusters()]
+        centers=xm.get_centers()
+
+        # cluster=x_means.x_means_cluster()
+        # centers=cluster.cluster_centers_
         num_clans=len(centers)
         clans=[]
         for i in range(num_clans):
