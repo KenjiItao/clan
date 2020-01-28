@@ -11,10 +11,6 @@ from pyclustering.cluster import xmeans
 from matplotlib import pyplot as plt
 import seaborn as sns
 sns.set_style(style="whitegrid")
-<<<<<<< HEAD
-=======
-
->>>>>>> 69f5fc6a39ed999120911826f2efc55940bd7ab0
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -412,4 +408,3 @@ if int(sys.argv[1])==0:
 elif int(sys.argv[1])==1:
     mutation=0.3
     main()
-

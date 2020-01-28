@@ -16,10 +16,6 @@ if int(sys.argv[1])==0:
     if not os.path.exists("./res"):
         os.mkdir("./res")
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 69f5fc6a39ed999120911826f2efc55940bd7ab0
 def cluster(data):
     res=0
     structure=0
