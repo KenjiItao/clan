@@ -16,6 +16,10 @@ from pyclustering.cluster import xmeans
 import warnings
 warnings.filterwarnings('ignore')
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69f5fc6a39ed999120911826f2efc55940bd7ab0
 if int(sys.argv[1])==0:
     if not os.path.exists("./cluster"):
         os.mkdir("./cluster")

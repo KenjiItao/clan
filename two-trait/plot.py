@@ -3,16 +3,18 @@ import pandas as pd
 import random
 import sys
 import os
-# import csv
 import math
 import copy
-# import collections
 import pickle
 import pyclustering
 from pyclustering.cluster import xmeans
 from matplotlib import pyplot as plt
 import seaborn as sns
 sns.set_style(style="whitegrid")
+<<<<<<< HEAD
+=======
+
+>>>>>>> 69f5fc6a39ed999120911826f2efc55940bd7ab0
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -390,7 +392,6 @@ def run():
     df.to_pickle("./res/{}regions_{}lineages_coop{}pc_conflict{}pc_mutation{}pm_descentmut{}pm_marry{}_friendship{}_initial{}_birth{}.pkl".format(num_trial,num_lineage,round(coop*100),round(conflict*100),round(mutation*1000),round(descent_mut*1000),marry,friendship,initial,birth))
 
 #settings
-
 num_lineage=50
 initial_pop=5
 num_trial=100
@@ -412,22 +413,3 @@ elif int(sys.argv[1])==1:
     mutation=0.3
     main()
 
-
-
-# for mutation in [0.1,0.3]:
-#     if int(sys.argv[1])==0:
-#         coop=0.5
-#         conflict=1.0
-#         main()
-#     elif int(sys.argv[1])==1:
-#         coop=0.5
-#         conflict=2.0
-#         main()
-#     elif int(sys.argv[1])==2:
-#         coop=1.0
-#         conflict=2.0
-#         main()
-#     elif int(sys.argv[1])==3:
-#         coop=0.5
-#         conflict=0.5
-#         main()
